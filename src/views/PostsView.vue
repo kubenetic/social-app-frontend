@@ -2,7 +2,7 @@
   <div class="posts">
     <h1>Posts</h1>
     <post-list
-      v-bind:posts="posts" />
+      v-bind:posts="posts"/>
   </div>
 </template>
 
@@ -19,7 +19,21 @@ export default {
           id: 1,
           user: 'teszt.elek',
           date: '2022-09-21T20:00:00',
-          post: 'Hello, World!'
+          post: 'Hello, World!',
+          comments: [
+            {
+              id: 3,
+              user: 'Nostradamus',
+              date: '2022-09-22T09:11:30',
+              post: 'Nice quote!'
+            },
+            {
+              id: 4,
+              user: 'Shakespeare',
+              date: '2022-09-22T08:15:45',
+              post: 'Really nice quote!'
+            }
+          ]
         },
         {
           id: 2,
