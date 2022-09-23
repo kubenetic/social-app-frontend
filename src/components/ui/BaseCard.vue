@@ -1,14 +1,23 @@
 <template>
-  <header v-if="$slots.header">
-    <slot name="header"></slot>
-  </header>
-  <slot></slot>
-  <footer v-if="$slots.footer && expandable">
-    <a href="#"
-       v-on:click.prevent="toggleDetails"
-       class="footer-elements">{{ message }}</a>
-    <slot name="footer" v-if="expanded"></slot>
-  </footer>
+  <div class="card">
+    <div class="header" v-if="$slots.header">
+      <slot name="header"></slot>
+    </div>
+
+    <div class="main">
+      <slot></slot>
+    </div>
+
+    <div class="footer" v-if="$slots.footer && expandable">
+      <div class="align-right">
+        <a href="#"
+           v-on:click.prevent="toggleDetails"
+           class="footer-elements">{{ message }}</a>
+      </div>
+
+      <slot name="footer" v-if="expanded"></slot>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -43,27 +52,30 @@ export default {
 </script>
 
 <style scoped>
-.footer-elements {
+.card {
   display: flex;
-  float: left;
+  flex-direction: column;
+  margin: 10px;
 }
 
-header {
+.header {
+  color: var(--text-dark);
+}
+
+.main {
+  padding: 0 10px;
+  border-left: 1px solid var(--night-blue);
+}
+
+.footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: brown;
+  flex-direction: column;
+  padding: 0 10px;
 }
 
-div {
-  margin: 2rem auto;
-  max-width: 50rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  padding: 1rem;
-}
-
-footer {
-  padding: 1rem;
+.align-right {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
