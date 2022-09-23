@@ -17,8 +17,11 @@ const userStore = {
     ]
   }),
   getters: {
-    getUser: (state) => (id) => {
+    getUserById: (state) => (id) => {
       return state.loadedUsers.find(user => user.id === Number(id))
+    },
+    getUserByName: (state) => (username) => {
+      return state.loadedUsers.find(user => user.username === username)
     }
   },
   mutations: {

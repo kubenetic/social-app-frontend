@@ -44,7 +44,7 @@ const router = createRouter({
   routes
 })
 
-router.beforeEach((to, from) => {
+router.beforeEach(async (to, from) => {
   const isAuthenticated = store.getters['authStore/isLoggedIn']
   if (to.meta.requiresAuth && !isAuthenticated) {
     return { name: 'Login' }

@@ -15,13 +15,20 @@
       </div>
 
       <div class="right-links">
-        <a href="#" class="nav-item">Logout</a>
+        <a
+          href="#"
+          class="nav-item"
+          v-on:click.prevent="logout"
+        >Logout</a>
       </div>
     </div>
 
     <div v-else>
       <div class="right-links">
-        <a href="#" class="nav-item">Login</a>
+        <router-link
+          to="/login"
+          class="nav-item">Login
+        </router-link>
       </div>
     </div>
   </nav>
@@ -35,6 +42,12 @@ export default {
     },
     userPageLink: function () {
       return `/user/${this.currentUser.id}`
+    }
+  },
+  methods: {
+    logout: async function () {
+      await this.$store.dispatch('authStore/logout')
+      this.$router.push({ name: 'Login' })
     }
   },
   name: 'NavigationBar'

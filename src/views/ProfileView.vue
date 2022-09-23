@@ -15,7 +15,7 @@ export default {
   components: { PostList },
   computed: {
     user: function () {
-      return this.$store.getters['userStore/getUser'](this.userid)
+      return this.$store.getters['userStore/getUserById'](this.userid)
     },
     posts: function () {
       return this.$store.getters['postStore/userPosts'](this.user.username)
