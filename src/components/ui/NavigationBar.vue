@@ -7,9 +7,9 @@
         Posts
       </router-link>
       <router-link
-        to="/about"
+        v-bind:to="userPageLink"
         class="nav-item">
-        About
+        Profile
       </router-link>
     </div>
 
@@ -21,6 +21,14 @@
 
 <script>
 export default {
+  computed: {
+    currentUser: function () {
+      return this.$store.getters['authStore/currentUser']
+    },
+    userPageLink: function () {
+      return `/user/${this.currentUser.id}`
+    }
+  },
   name: 'NavigationBar'
 }
 </script>
