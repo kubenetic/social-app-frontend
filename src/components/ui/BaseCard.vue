@@ -43,12 +43,6 @@ export default {
 </script>
 
 <style scoped>
-.right-icon {
-  float: right;
-  margin: 2rem auto;
-  border-radius: 12px;
-}
-
 .footer-elements {
   display: flex;
   float: left;
