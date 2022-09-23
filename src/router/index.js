@@ -4,8 +4,13 @@ import ProfileView from '@/views/ProfileView'
 
 const routes = [
   {
-    name: 'Posts',
+    name: 'Home',
     path: '/',
+    redirect: '/posts'
+  },
+  {
+    name: 'Posts',
+    path: '/posts',
     component: PostsView
   },
   {

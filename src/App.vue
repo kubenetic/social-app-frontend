@@ -1,6 +1,8 @@
 <template>
   <navigation-bar/>
-  <router-view />
+  <main>
+    <router-view/>
+  </main>
 </template>
 
 <script>
@@ -12,13 +14,17 @@ export default {
 </script>
 
 <style>
+html,
 body {
   margin: 0;
+  padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+
+  display: flex;
+  flex-direction: column;
 }
 
-.content {
-  padding-top: 5.5vh;
-  padding-left: 10%;
+main {
+  padding: 0 10px;
 }
 </style>
