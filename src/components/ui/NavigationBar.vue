@@ -31,12 +31,7 @@ export default {
 .app-bar {
   height: 5vh;
   width: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
   background-color: var(--night-blue);
-  overflow: hidden;
   display: block;
   justify-content: space-between;
 }

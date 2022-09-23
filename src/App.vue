@@ -1,6 +1,6 @@
 <template>
   <navigation-bar/>
-  <router-view class="content"/>
+  <router-view />
 </template>
 
 <script>

@@ -12,36 +12,9 @@ import PostList from '@/components/posts/PostList'
 export default {
   name: 'PostsView',
   components: { PostList },
-  data: function () {
-    return {
-      posts: [
-        {
-          id: 1,
-          user: 'teszt.elek',
-          date: '2022-09-21T20:00:00',
-          post: 'Hello, World!',
-          comments: [
-            {
-              id: 3,
-              user: 'Nostradamus',
-              date: '2022-09-22T09:11:30',
-              post: 'Nice quote!'
-            },
-            {
-              id: 4,
-              user: 'Shakespeare',
-              date: '2022-09-22T08:15:45',
-              post: 'Really nice quote!'
-            }
-          ]
-        },
-        {
-          id: 2,
-          user: 'cserepes.virag',
-          date: '2022-09-20T22:00:00',
-          post: 'Hello, Világ!'
-        }
-      ]
+  computed: {
+    posts: function () {
+      return this.$store.getters['postStore/posts']
     }
   }
 }

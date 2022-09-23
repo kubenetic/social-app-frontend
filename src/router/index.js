@@ -4,14 +4,15 @@ import AboutView from '@/views/AboutView'
 
 const routes = [
   {
-    path: '/',
     name: 'Posts',
+    path: '/',
     component: PostsView
   },
   {
-    path: '/about',
     name: 'About',
-    component: AboutView
+    path: '/about/:userid',
+    component: AboutView,
+    props: true
   }
 ]
 
