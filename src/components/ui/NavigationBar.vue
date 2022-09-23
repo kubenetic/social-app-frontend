@@ -1,20 +1,28 @@
 <template>
   <nav class="app-bar">
-    <div class="left-links">
-      <router-link
-        to="/"
-        class="nav-item">
-        Posts
-      </router-link>
-      <router-link
-        v-bind:to="userPageLink"
-        class="nav-item">
-        Profile
-      </router-link>
+    <div v-if="currentUser && currentUser.id">
+      <div class="left-links">
+        <router-link
+          to="/"
+          class="nav-item">
+          Posts
+        </router-link>
+        <router-link
+          v-bind:to="userPageLink"
+          class="nav-item">
+          Profile
+        </router-link>
+      </div>
+
+      <div class="right-links">
+        <a href="#" class="nav-item">Logout</a>
+      </div>
     </div>
 
-    <div class="right-links">
-      <a href="#" class="nav-item">Login</a>
+    <div v-else>
+      <div class="right-links">
+        <a href="#" class="nav-item">Login</a>
+      </div>
     </div>
   </nav>
 </template>

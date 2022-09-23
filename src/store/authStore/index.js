@@ -1,12 +1,7 @@
 export default {
   namespaced: true,
   state: () => ({
-    currentUser: {
-      id: 1,
-      username: 'teszt.elek',
-      description: 'Hello! I\'m Elek!',
-      loggedIn: false
-    }
+    currentUser: {}
   }),
   getters: {
     currentUser (state) {
